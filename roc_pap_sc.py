@@ -1,4 +1,4 @@
-import random 
+from random import randint
 
 print("""
 
@@ -47,7 +47,7 @@ print("""
 
 class rock_paper_scissor():
         def paper_option(user_in):
-                ai_in = random.randint(1,3)
+                ai_in = randint(1,3)
                 if ai_in == 2:
                         print("It's a tie! AI chose: Paper")
                 elif ai_in == 1:
@@ -55,7 +55,7 @@ class rock_paper_scissor():
                 else:
                         print("You lose! AI chose: Scissors")   
         def scissor_option(user_in):
-                ai_in = random.randint(1,3)
+                ai_in = randint(1,3)
                 if ai_in == 2:
                         print("You win! AI chose: Paper")
                 elif ai_in == 1:
@@ -64,7 +64,7 @@ class rock_paper_scissor():
                         print("It's a tie! AI chose: Scissors")  
 
         def rock_option(user_in):
-                ai_in = random.randint(1,3)
+                ai_in = randint(1,3)
                 if ai_in == 2:
                         print("You lose! AI chose: Paper")
                 elif ai_in == 1:
@@ -78,23 +78,16 @@ game_paper = rock_paper_scissor.paper_option
 game_rock = rock_paper_scissor.rock_option
 game_scissor = rock_paper_scissor.scissor_option
 
-user_input = input("Rock, Paper, or Scissor: ")
-paper = ["paper", 
-         "Paper"]
-rock = ["rock", 
-        "Rock"]
-scissor = ["scissor",
-	  "Scissor"]
+user_input = input("Rock, Paper, or Scissor: ").lower()
+paper = "paper"
+rock = "rock"
+scissor = "scissor"
 
-if user_input == rock[1]:
+if user_input == rock:
 	game_rock(user_input)
-if user_input == rock[0]:
-        game_rock(user_input)
-if user_input == paper[1]:
+elif user_input == paper:
         game_paper(user_input)
-if user_input == paper[0]:
-        game_paper(user_input)
-if user_input == scissor[1]:
+elif user_input == scissor:
         game_scissor(user_input)
-if user_input == scissor[0]:
-        game_scissor(user_input)
+else:
+    print("Wrong Input!")
